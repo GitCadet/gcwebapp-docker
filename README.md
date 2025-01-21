@@ -1,13 +1,15 @@
-#  🐳 GitCadet: Dockerised Webpage
+#  🐳 GitCadet: Dockerised Website
 
-This repository contains a custom docker webapp, packaged and hosted using NGINX. Below, you'll find a detailed breakdown of the steps to build, tag, version, and then push the Docker image to a Docker registry, as well as some instructions for running the container. Additionally, I share key things I learned during this process.
+This repository contains a custom docker website, packaged and hosted using NGINX. Below, you'll find a detailed breakdown of the steps to build, tag, version, and then push the Docker image to a Docker registry, as well as some instructions for running the container. Additionally, I share key things I learned during this process.
 
 ---
 
 ## Building the Docker Image
-In order to build GitCadet custom webpage, I first specified a Dockerfile that included:
+In order to build GitCadet custom website, I first specified a Dockerfile that included:
 - "`FROM nginx:latest`" - in order to set the base image. 
-- "`ADD . /usr/share/nginx/html`" - in order to copy the files & directories from source to the destination filesystem of the image. This also ensures the custom webpage is served directly by NGINX.
+- "`ADD . /usr/share/nginx/html`" - in order to copy the files & directories from source to the destination filesystem of the image. This also ensures the custom website is served directly by NGINX.
+
+(Used `nginx:latest` as the initial base image but for optimisation, I later switched to `nginx:1.27.3-alpine` to reduce image size.)
 
 With the Dockerfile ready, I built the Docker image using the following command:
 - "`docker build -t gitcadet-website:latest .`" 
@@ -57,5 +59,6 @@ For versioned images:
 ### Step 3: Verify the Image
 I checked my Docker Hub repository to confirm the image is available.
 ## Key Learnings and Improvements 💡
-1. **Reducing Image Size:** Using Alpine Linux significantly reduces the image size, which leads to faster builds and deployments, hence I changed the Dockerfile to read `FROM nginx:1.27.3-alpine`.
-2. **Security Best Practices:** Use specific image versions instead of `latest` to avoid unexpected changes.
+1. **Reducing Image Size:** Using Alpine Linux significantly reduces the image size, which leads to faster builds and deployments, hence I changed the Dockerfile to read "`FROM nginx:1.27.3-alpine`".
+2. **Security Best Practices:** Use specific image versions instead of "`latest`" to avoid unexpected changes.
+3. **Efficient Container Management:** I became more comfortable with managing Docker containers using commands "`docker logs`" to view container logs. This was essential in debugging and verifying that everything was running as expected.
