@@ -6,8 +6,8 @@ This repository contains a custom docker website, packaged and hosted using NGIN
 
 ## Building the Docker Image
 In order to build GitCadet custom website, I first specified a Dockerfile that included:
-- "`FROM nginx:latest`" - in order to set the base image. 
-- "`ADD . /usr/share/nginx/html`" - in order to copy the files & directories from source to the destination filesystem of the image. This also ensures the custom website is served directly by NGINX.
+- "`FROM nginx:latest`" - to set the base image. 
+- "`ADD . /usr/share/nginx/html`" - to copy the files & directories from source to the destination filesystem of the image. This also ensures the custom website is served directly by NGINX.
 
 (Used `nginx:latest` as the initial base image but for optimisation, I later switched to `nginx:1.27.3-alpine` to reduce image size.)
 
