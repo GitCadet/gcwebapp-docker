@@ -1,15 +1,15 @@
 #  🐳 GitCadet: Dockerised Website
 
-This repository contains a custom docker website, packaged and hosted using NGINX. Below, you'll find a detailed breakdown of the steps to build, tag, version, and then push the Docker image to a Docker registry, as well as some instructions for running the container. Additionally, I share key things I learned during this process.
+This repository contains a custom docker website, packaged and hosted using NGINX. Below, you'll find a detailed breakdown of the steps to build, tag, version, and then push the Docker image to a Docker registry, as well as some instructions for running the container. Additionally, I share key things I learned during this process!
 
 ---
 
 ## Building the Docker Image
-In order to build GitCadet custom website, I first specified a Dockerfile that included:
+To build the GitCadet custom website, I first created a Dockerfile that included:
 - "`FROM nginx:latest`" - to set the base image. 
 - "`ADD . /usr/share/nginx/html`" - to copy the files & directories from source to the destination filesystem of the image. This also ensures the custom website is served directly by NGINX.
 
-(Used `nginx:latest` as the initial base image but for optimisation, I later switched to `nginx:1.27.3-alpine` to reduce image size.)
+(Alpine: I used `nginx:latest` as the initial base image but for optimisation, I later switched to `nginx:1.27.3-alpine` to reduce image size.)
 
 With the Dockerfile ready, I built the Docker image using the following command:
 - "`docker build -t gitcadet-website:latest .`" 
@@ -26,7 +26,7 @@ Versioned Tags:
 - `gitcadet-website:2`
 - `gitcadet-website:3`
 
-This approach allows for organised deployments and easy rollback if necessary.
+This approach allows for organised deployments and allows for easy rollbacks if necessary.
 
 ## Running the Docker Container
 
