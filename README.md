@@ -30,7 +30,7 @@ This approach allows for organised deployments and easy rollback if necessary.
 
 ## Running the Docker Container
 
-Run the Docker container using "`docker run --name gcwebappL -d -p 800:80 website:latest`"
+I ran the Docker container using "`docker run --name gcwebappL -d -p 800:80 website:latest`":
 - `-d`: Runs the container in detached mode.
 - `-p 800:80`: Maps port 800 of the host to port 80 on the container.
 - `--name`: Assigns the 'gcwebappL' name to the container for easier management.
