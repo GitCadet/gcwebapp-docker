@@ -18,7 +18,7 @@ With the Dockerfile ready, I built the Docker image using the following command:
 To maintain a professional development workflow, I implemented a clear versioning strategy:
 
 Initial Tagging:
-- I tagged the image as "`gitcadet-website:latest`" during initial development.
+- Tagged the image as "`gitcadet-website:latest`" during initial development.
 - Utilised "`docker tag gitcadet-website:latest gitcadet-website:1`" to version the image.
 
 Versioned Tags:
