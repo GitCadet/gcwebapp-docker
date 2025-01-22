@@ -61,4 +61,4 @@ I checked my Docker Hub repository to confirm the image is available.
 ## Key Learnings and Improvements 💡
 1. **Reducing Image Size:** Using Alpine Linux significantly reduces the image size, which leads to faster builds and deployments, hence I changed the Dockerfile to read "`FROM nginx:1.27.3-alpine`".
 2. **Security Best Practices:** Use specific image versions instead of "`latest`" to avoid unexpected changes.
-3. **Efficient Container Management:** I became more comfortable with managing Docker containers using commands "`docker logs`" to view container logs. This was essential in debugging and verifying that everything was running as expected.
+3. **Efficient Container Management:** I became more comfortable with managing Docker containers using commands like "`docker logs`" to view container logs. This was essential in debugging and verifying that everything was running as expected.
