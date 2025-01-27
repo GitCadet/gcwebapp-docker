@@ -4,7 +4,7 @@ This repository contains a custom docker website, packaged and hosted using NGIN
 
 ---
 
-## Building the Docker Image
+## 1. Building the Docker Image
 To build the GitCadet custom website, I first created a Dockerfile that included:
 - "`FROM nginx:latest`" - to set the base image. 
 - "`ADD . /usr/share/nginx/html`" - to copy the files & directories from source to the destination filesystem of the image. This also ensures the custom website is served directly by NGINX.
@@ -28,7 +28,7 @@ Versioned Tags:
 
 This approach allows for organised deployments and allows for easy rollbacks if necessary.
 
-## Running the Docker Container
+## 2. Running the Docker Container
 
 I ran the Docker container using "`docker run --name gcwebappL -d -p 800:80 website:latest`":
 - `-d`: Runs the container in detached mode.
@@ -42,7 +42,8 @@ I then verified the container is running using the "`docker ps`" command. Once v
 
 ### Version 3 (Latest):
 ![image alt](https://github.com/GitCadet/gcwebapp-docker/blob/main/Screenshot%202025-01-21%20at%2014.14.55%201.png?raw=true)
-## Pushing to Docker Registry
+
+## 3. Pushing to Docker Registry
 To share my Docker image, I pushed it to DockerHub by following these steps:
 
 ### Step 1: Authenticate with Docker Hub
